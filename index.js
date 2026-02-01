@@ -53,25 +53,49 @@
 
 // Practice 4
 
-function password(obj) {
-  if (
-    Object.keys(obj).length < 3 ||
-    obj.birthYear.toString().length < 4 ||
-    !obj
-  )
-    return "Invalid";
-  const userName = obj.name;
-  const userBirthYear = obj.birthYear;
-  const site = obj.siteName;
-  const siteName = site[0].toUpperCase() + site.slice(1);
-  const output = siteName + "#" + userName + "@" + userBirthYear;
-  return output;
-}
-const obj = {
-  name: "kolimuddin",
-  birthYear: 1999,
-  siteName: "facebook",
-};
+// function password(obj) {
+//   if (
+//     Object.keys(obj).length < 3 ||
+//     obj.birthYear.toString().length < 4 ||
+//     !obj
+//   )
+//     return "Invalid";
+//   const userName = obj.name;
+//   const userBirthYear = obj.birthYear;
+//   const site = obj.siteName;
+//   const siteName = site[0].toUpperCase() + site.slice(1);
+//   const output = siteName + "#" + userName + "@" + userBirthYear;
+//   return output;
+// }
+// const obj = {
+//   name: "kolimuddin",
+//   birthYear: 1999,
+//   siteName: "facebook",
+// };
 
-const result = password(obj);
+// const result = password(obj);
+// console.log(result);
+
+// Practice 5
+
+function monthlySavings(prop1, prop2) {
+  let money = [];
+  let totalMoney = 0;
+  for (const val of prop1) {
+    if (val >= 3000) {
+      money.push(val - (val * 20) / 100);
+    } else {
+      money.push(val);
+    }
+  }
+  for (const val of money) {
+    totalMoney += val;
+  }
+  return money;
+}
+
+const arr = [1000, 2000, 3000];
+const livingCost = 5400;
+
+const result = monthlySavings(arr, livingCost);
 console.log(result);
