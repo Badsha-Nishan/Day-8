@@ -41,10 +41,12 @@
 
 function deleteInvalids(array) {
   if (!Array.isArray(array)) return "Invalid Array";
-  const output = array.filter((valid) => typeof valid === "number");
+  const output = array.filter(
+    (valid) => typeof valid === "number" && !Number.isNaN(valid)
+  );
   return output;
 }
 
-const arr = [5, 2, 4, null, "string", 0];
+const arr = [NaN, 1, 12, 0, -1, undefined];
 const result = deleteInvalids(arr);
 console.log(result);
