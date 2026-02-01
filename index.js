@@ -39,14 +39,39 @@
 
 // Practice 3
 
-function deleteInvalids(array) {
-  if (!Array.isArray(array)) return "Invalid Array";
-  const output = array.filter(
-    (valid) => typeof valid === "number" && !Number.isNaN(valid)
-  );
+// function deleteInvalids(array) {
+//   if (!Array.isArray(array)) return "Invalid Array";
+//   const output = array.filter(
+//     (valid) => typeof valid === "number" && !Number.isNaN(valid)
+//   );
+//   return output;
+// }
+
+// const arr = [NaN, 1, 12, 0, -1, undefined];
+// const result = deleteInvalids(arr);
+// console.log(result);
+
+// Practice 4
+
+function password(obj) {
+  if (
+    Object.keys(obj).length < 3 ||
+    obj.birthYear.toString().length < 4 ||
+    !obj
+  )
+    return "Invalid";
+  const userName = obj.name;
+  const userBirthYear = obj.birthYear;
+  const site = obj.siteName;
+  const siteName = site[0].toUpperCase() + site.slice(1);
+  const output = siteName + "#" + userName + "@" + userBirthYear;
   return output;
 }
+const obj = {
+  name: "kolimuddin",
+  birthYear: 1999,
+  siteName: "facebook",
+};
 
-const arr = [NaN, 1, 12, 0, -1, undefined];
-const result = deleteInvalids(arr);
+const result = password(obj);
 console.log(result);
