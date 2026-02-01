@@ -16,23 +16,35 @@
 
 // Practice 2
 
-function checkName(name) {
-  if (typeof name !== "string" || name.length === 0) return "Invalid";
-  const lastChar = name[name.length - 1].toLowerCase();
-  if (
-    lastChar === "a" ||
-    lastChar === "y" ||
-    lastChar === "i" ||
-    lastChar === "e" ||
-    lastChar === "o" ||
-    lastChar === "u" ||
-    lastChar === "w"
-  ) {
-    return "Good Name";
-  }
-  return "Bad Name";
+// function checkName(name) {
+//   if (typeof name !== "string" || name.length === 0) return "Invalid";
+//   const lastChar = name[name.length - 1].toLowerCase();
+//   if (
+//     lastChar === "a" ||
+//     lastChar === "y" ||
+//     lastChar === "i" ||
+//     lastChar === "e" ||
+//     lastChar === "o" ||
+//     lastChar === "u" ||
+//     lastChar === "w"
+//   ) {
+//     return "Good Name";
+//   }
+//   return "Bad Name";
+// }
+
+// const name = "Fahad";
+// const result = checkName(name);
+// console.log(result);
+
+// Practice 3
+
+function deleteInvalids(array) {
+  if (!Array.isArray(array)) return "Invalid Array";
+  const output = array.filter((valid) => typeof valid === "number");
+  return output;
 }
 
-const name = "Fahad";
-const result = checkName(name);
+const arr = [5, 2, 4, null, "string", 0];
+const result = deleteInvalids(arr);
 console.log(result);
