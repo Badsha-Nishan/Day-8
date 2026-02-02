@@ -144,3 +144,14 @@ const min = Math.min(...array);
 console.log(min);
 
 console.log(smallest);
+
+const str1 = "hello";
+const fnc = (prop) => {
+  let rev = "";
+  for (let i = prop.length - 1; i >= 0; i--) {
+    rev = rev + prop[i];
+  }
+  return rev;
+};
+
+console.log(fnc(str1));
