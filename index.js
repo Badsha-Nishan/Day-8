@@ -78,31 +78,69 @@
 
 // Practice 5
 
-function monthlySavings(prop1, prop2) {
-  if (!Array.isArray(prop1)) return "Invalid";
-  let money = [];
-  let totalMoney = 0;
-  for (const val of prop1) {
-    if (val >= 3000) {
-      money.push(val - (val * 20) / 100);
-    } else {
-      money.push(val);
-    }
+// function monthlySavings(prop1, prop2) {
+//   if (!Array.isArray(prop1)) return "Invalid";
+//   let money = [];
+//   let totalMoney = 0;
+//   for (const val of prop1) {
+//     if (val >= 3000) {
+//       money.push(val - (val * 20) / 100);
+//     } else {
+//       money.push(val);
+//     }
+//   }
+//   for (const val of money) {
+//     totalMoney += val;
+//   }
+//   let total = 0;
+//   for (const item of money) {
+//     total += item;
+//   }
+//   const output = total - prop2;
+//   if (output < 0) return "Earn More";
+//   return output;
+// }
+
+// const arr = [1000, 2000, 2500];
+// const livingCost = 5000;
+
+// const result = monthlySavings(arr, livingCost);
+// console.log(result);
+
+//Task from ChatGPT-------------------------
+
+// Task-1
+const name = "JavaScript";
+const finalName = name.toLowerCase();
+let count = 0;
+for (const val of finalName) {
+  if (val === "a" || val === "e" || val === "i" || val === "o" || val === "u") {
+    count++;
   }
-  for (const val of money) {
-    totalMoney += val;
-  }
-  let total = 0;
-  for (const item of money) {
-    total += item;
-  }
-  const output = total - prop2;
-  if (output < 0) return "Earn More";
-  return output;
 }
+console.log(count);
 
-const arr = [1000, 2000, 2500];
-const livingCost = 5000;
+// Task-2
+const arr = [1, 2, 3, 4, 5];
+let total = 0;
+for (const val of arr) {
+  total += val;
+}
+console.log(total);
 
-const result = monthlySavings(arr, livingCost);
-console.log(result);
+// Another Way
+const another = arr.reduce((res, cur) => res + cur, 0); // 0 for initial value coz if array is empty.
+console.log(another);
+
+// Task 3
+const array = [34, 15, -88, 2, 1];
+let smallest = array[0];
+for (const val of array) {
+  if (smallest > val) {
+    smallest = val;
+  }
+}
+const min = Math.min(...array);
+console.log(min);
+
+console.log(smallest);
