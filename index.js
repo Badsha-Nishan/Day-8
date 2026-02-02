@@ -79,6 +79,7 @@
 // Practice 5
 
 function monthlySavings(prop1, prop2) {
+  if (!Array.isArray(prop1)) return "Invalid";
   let money = [];
   let totalMoney = 0;
   for (const val of prop1) {
@@ -91,11 +92,17 @@ function monthlySavings(prop1, prop2) {
   for (const val of money) {
     totalMoney += val;
   }
-  return money;
+  let total = 0;
+  for (const item of money) {
+    total += item;
+  }
+  const output = total - prop2;
+  if (output < 0) return "Earn More";
+  return output;
 }
 
-const arr = [1000, 2000, 3000];
-const livingCost = 5400;
+const arr = [1000, 2000, 2500];
+const livingCost = 5000;
 
 const result = monthlySavings(arr, livingCost);
 console.log(result);
